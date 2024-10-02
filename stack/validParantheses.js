@@ -1,4 +1,7 @@
 function isValid(s) {
+    if (s.trim().length === 0) {
+        return false;
+    }
     const stack = [];
     const pairs = new Map([
         [")", "("],
@@ -19,10 +22,11 @@ function isValid(s) {
 const s = "([{}])";
 
 const r = "([}])";
-console.log(isValid(s));
+console.log(isValid(s)); // true
 
-console.log(isValid(r));
+console.log(isValid(r)); // false
 
-console.log(isValid("()[]{}"));
-console.log(isValid("([])"));
-console.log(isValid("(]"));
+console.log(isValid("()[]{}")); // true
+console.log(isValid("([])")); // true
+console.log(isValid("(]")); // false
+console.log(isValid("     ")); // false
