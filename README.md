@@ -19,5 +19,5 @@ I have categorized the solutions based on the type of problem: <br>
 - [Two Pointer](./twoPointer)
 
 ## Resources
-- [NeetCode]: (https://neetcode.io/)
-- [LeetCode]: (https://leetcode.com/) For testing solutions and practicing problems
+- [NeetCode](https://neetcode.io/)
+- [LeetCode](https://leetcode.com/) : For testing solutions and practicing problems
