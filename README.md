@@ -8,16 +8,16 @@
 This repository is dedicated to solutions for Data Structures and Algorithms problems, primarily sourced from NeetCode's curriculum.
 
 ## Tech Stack
-JavaScript for most of the solutions <br>
-Node.js (for running and testing algorithms) <br>
+- JavaScript for most of the solutions <br>
+- Node.js (for running and testing algorithms) <br>
 
 ## Solutions <br>
 I have categorized the solutions based on the type of problem: <br>
 
-Arrays and HashMap
-Stack
-Two Pointer
+- [Arrays and HashMap](./arrayHashing) 
+- [Stack](./stack)
+- [Two Pointer](./twoPointer)
 
 ## Resources
-NeetCode: NeetCode.io
-LeetCode: For testing solutions and practicing problems
+- NeetCode: NeetCode.io
+- LeetCode: For testing solutions and practicing problems
