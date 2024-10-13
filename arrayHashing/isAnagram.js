@@ -19,22 +19,6 @@ Constraints:
 
 s and t consist of lowercase English letters.
  */
-function isAnagram(s, t) {
-    // using brute force, two for loops to compare
-    for (let charOne of s) {
-        let foundMatch = false;
-        for (let charTwo of t) {
-            if (charOne === charTwo) {
-                foundMatch = true;
-                break;
-            }
-        }
-        if (!foundMatch) {
-            return false;
-        }
-    }
-    return true;
-}
 
 // console.log(isAnagram("true", "ruta"));
 // ttrue
