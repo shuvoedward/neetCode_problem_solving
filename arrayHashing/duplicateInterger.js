@@ -27,5 +27,14 @@ function hasDuplicates(nums) {
     // Space complexity  O(n), creating a new set. in the worst case size of set will equal to the size of the array
 }
 
+function hasDuplicates2(nums) {
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] === nums[i + 1]) return true;
+    }
+    return false;
+}
+
 const nums = [1, 2, 3, 3];
+const nums2 = [1, 2, 3, 4];
 console.log(hasDuplicates(nums));
+console.log(hasDuplicates2(nums2));
