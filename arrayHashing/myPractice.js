@@ -91,3 +91,25 @@ function kFrequent(nums, k) {
     }
 }
 
+function productExceptSelf(nums) {
+    const result = [];
+
+    let prefix = 1,
+        postFix = 1;
+
+    // Prefix
+    for (let i = 0; i < nums.length; i++) {
+        result.push(prefix);
+        prefix *= nums[i];
+    }
+
+    // Postfix
+    for (let i = nums.length - 1; i >= 0; i--) {
+        result[i] = result[i] * postFix;
+        postFix *= nums[i];
+    }
+    return result;
+}
+console.log(productExceptSelf([2, 3, 4, 5]));
+console.log(productExceptSelf([1, 2, 4, 6]));
+console.log(productExceptSelf([-1, 0, 1, 2, 3]));
