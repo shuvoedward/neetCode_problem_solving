@@ -24,6 +24,7 @@ function fromLeetcode(s1, s2) {
         if (neededChar[s2[right]] > 0) requiredLength--;
         // Since we have encountered new char i.e s2[right] we decrease it's
         // count in neededChar even if it is not present in neededChar because we only care about neededChars
+        console.log(neededChar);
         neededChar[s2[right]]--;
         right++; //window is incremented by 1 step
 
@@ -48,5 +49,5 @@ function fromLeetcode(s1, s2) {
     return false;
 }
 
-console.log(fromLeetcode("abc", "lecabee"));
+// console.log(fromLeetcode("abc", "lecabee"));
 console.log(fromLeetcode("abc", "lecaabee"));

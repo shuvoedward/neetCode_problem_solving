@@ -1,4 +1,5 @@
 function maxProfit(prices) {
+    // Dynamic programming
     let maxProfit = 0;
     let minimum = prices[0];
 
@@ -24,20 +25,22 @@ function maxProfit2(prices) {
     return maxProfit;
 }
 
-function slidingWindow(prices) {
+function twoPointers(prices) {
     // From neetcode
-    let min = prices[0];
-    let max = min;
-    let value = 0;
-    for (let i = 0; i < prices.length; i++) {
-        if (i != prices.length - 1 && prices[i] <= min) {
-            max = min = prices[i];
-        } else if (prices[i] > max) {
-            max = prices[i];
+    let l = 0,
+        r = 1;
+    let maxP = 0;
+
+    while (r < prices.length) {
+        if (prices[l] < prices[r]) {
+            let profit = prices[r] - prices[l];
+            maxP = Math.max(maxP, profit);
+        } else {
+            l = r;
         }
-        value = max - min > value ? max - min : value;
+        r++;
     }
-    return value;
+    return maxP;
 }
 
 console.log(maxProfit([10, 1, 5, 6, 7, 1]));

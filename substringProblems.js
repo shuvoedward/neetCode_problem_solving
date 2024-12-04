@@ -2,7 +2,7 @@
 
 // For most substring problem, we are given a string 
 // and need to find a substring of it which
-//  satisfy some restrictions. A general way is to use 
+// satisfy some restrictions. A general way is to use 
 // a hashmap assisted with two pointers. The template is given below.
 
 
@@ -57,6 +57,19 @@ function minWindow(s, t) {
         if (map[s.charCodeAt(end++)]-- > 0) {
             counter--; // Decrease counter if `s[end]` is part of `t`
         }
+        /** 
+        // Check if the character contributes to substring validity
+        if (map[s.charCodeAt(end)] > 0) {
+            counter--; // Reduce the count of required characters
+        }
+
+        // Decrement the frequency of the character in the map
+        map[s.charCodeAt(end)]--;
+
+        // Move the `end` pointer forward
+        end++;
+
+         */
         
         while (counter === 0) { // If we have a valid substring
             if (end - begin < d) {
