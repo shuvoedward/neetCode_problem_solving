@@ -19,6 +19,7 @@ Output: [7]
 */
 
 function topKFrequent(nums, k) {
+    // Bucket Sort
     const count = {};
     const freq = Array.from({ length: nums.length + 1 }, () => []);
 

@@ -1,4 +1,4 @@
-package main
+package arrayhashing
 
 import "fmt"
 func twoSum(nums []int, target int) []int {
@@ -31,11 +31,27 @@ func twoPass(nums []int, target int) []int{
 	return []int{}
 }
 
+func onePass(nums []int, target int) []int{
+	indices := make(map[int]int)
+
+	for i, n := range(nums){
+		diff := target - n
+
+		if j, found := indices[diff]; found {
+			return []int{j,i}
+		}
+		indices[n] = i
+	}
+
+	return []int{}
+}
+
 func main(){
 	nums := []int{3, 4, 5, 7}
 	target:= 7
 	
 	// result := twoSum(nums, target)
 	// fmt.Println(result)
-	fmt.Println(twoPass(nums, target))
+	// fmt.Println(twoPass(nums, target))
+	fmt.Println(onePass(nums, target))
 }
