@@ -5,7 +5,7 @@ func bucketSort(nums []int, k int) []int {
 
 	freq := make([][]int, len(nums)+1)
 
-	for _, num := range nums{
+	for _, num := range nums {
 		count[num]++
 	}
 
@@ -14,9 +14,9 @@ func bucketSort(nums []int, k int) []int {
 	}
 
 	res := []int{}
-	for i := len(freq) - 1; i > 0; i--{
-		for _, num := range freq[i]{
-			res = append(res, num)	
+	for i := len(freq) - 1; i > 0; i-- {
+		for _, num := range freq[i] {
+			res = append(res, num)
 			if len(res) == k {
 				return res
 			}
@@ -24,8 +24,4 @@ func bucketSort(nums []int, k int) []int {
 	}
 
 	return res
-}
-
-func main(){
-	
 }

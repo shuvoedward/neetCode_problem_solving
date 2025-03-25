@@ -61,3 +61,24 @@ func division(nums []int) []int {
 	return res
 
 }
+
+func profixAndSuffix(nums []int) []int {
+	// Optimal
+
+	res := make([]int, len(nums))
+
+	prefix := 1
+	for i, num := range nums {
+		res[i] = prefix
+		prefix *= num
+	}
+
+	postfix := 1
+	for i := len(nums) - 1; i >= 0; i-- {
+
+		res[i] *= postfix
+		postfix *= nums[i]
+
+	}
+	return res
+}
