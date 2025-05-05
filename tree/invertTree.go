@@ -36,14 +36,17 @@ func invertTreeBFS(root *TreeNode) *TreeNode {
 		node := queue[0]
 		queue = queue[1:]
 
+		// 1. swap it
 		node.Left, node.Right = node.Right, node.Left
 
+		// 2. check if nil, if not append
 		if node.Left != nil {
 			queue = append(queue, node.Left)
 		}
 		if node.Right != nil {
 			queue = append(queue, node.Right)
 		}
+
 	}
 
 	return root
