@@ -19,12 +19,6 @@ tree := TreeNode{
 
 */
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func recursiveDFS(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -50,7 +44,8 @@ Space complexity O(n)
 //     Right *TreeNode
 // }
 
-func maxDepth(root *TreeNode) int {
+// Iterative Depth First Search
+func maxDepthDFS(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -79,4 +74,34 @@ func maxDepth(root *TreeNode) int {
 	}
 
 	return maxDepth
+}
+
+func maxDepthBFS(root *TreeNode) int {
+	if root != nil {
+		return 0
+	}
+
+	queue := []*TreeNode{root}
+	depth := 0
+
+	for len(queue) > 0 {
+		levelSize := len(queue) // number of nodes at current level
+
+		for range levelSize {
+			current := queue[0]
+			queue = queue[1:]
+
+			if current.Left != nil {
+				queue = append(queue, current.Left)
+			}
+
+			if current.Right != nil {
+				queue = append(queue, current.Right)
+			}
+		}
+
+		depth++
+	}
+
+	return depth
 }
