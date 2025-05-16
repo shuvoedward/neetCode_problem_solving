@@ -1,4 +1,4 @@
-package main
+package tree
 
 // TODO: 1. Define a tree node struct type
 type TreeNode struct {
