@@ -6,6 +6,9 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+func NewTreeNode(val int) *TreeNode {
+	return &TreeNode{Val: val}
+}
 func isBalanced(root *TreeNode) bool {
 	return dfsBalanced(root).balanced
 }
