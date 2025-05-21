@@ -49,3 +49,35 @@ func RightSideViewDFS(root *TreeNode) []int {
 	dfs(root, 0)
 	return res
 }
+
+/*
+if depth == len(res) {
+			res = append(res, node.Val)
+		}
+This line ensures that only the first node visited at
+each depth is added to the result.
+Since the traversal is right-first depth-first search (DFS),
+the first node visited at any given depth is the rightmost
+node at that level.
+
+Here's how to say it more clearly:
+
+"If the current depth equals the length of the result list,
+it means we haven't added any node from this depth level yet.
+Since we're traversing the right child before the left child,
+the first node we see at each depth is the rightmost node at
+that level. So, we append its value to the result."
+
+This trick relies on the fact that in DFS, the recursive
+depth increases as we go down the tree, and the list res
+only grows one element per level — only once per depth.
+
+Let me know if you want a visual example to solidify it.
+
+
+
+
+
+
+
+*/
