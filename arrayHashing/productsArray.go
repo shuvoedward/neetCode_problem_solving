@@ -81,4 +81,5 @@ func profixAndSuffix(nums []int) []int {
 
 	}
 	return res
+
 }

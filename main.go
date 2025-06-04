@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"neetcode/arrayhashing"
 	"neetcode/tree"
 )
 
@@ -20,7 +21,10 @@ func main() {
 	node.Right.Right = tree.NewTreeNode(7)
 
 	// emptyNode := (*tree.TreeNode)(nil)
-	result := tree.LevelOrderBFS(node)
-	fmt.Println("result is ", result)
+	// result := tree.LevelOrderBFS(node)
+	// fmt.Println("result is ", result)
 
+	nums := []int{1, 2, 3, 4}
+	res := arrayhashing.Practice(nums)
+	fmt.Println(res)
 }
